@@ -43,7 +43,8 @@ INSTALLED_APPS = [
 
     # apps
     'users',
-    'clinics'
+    'clinics',
+    'reviews'
 ]
 
 MIDDLEWARE = [
@@ -79,12 +80,27 @@ WSGI_APPLICATION = 'cs_32.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'name',
+        'USER': 'postgres',
+        'PASSWORD': '',
+        'HOST': 'localhost',      # Or your DB host
+        'PORT': '5432',           # Default Postgres port
     }
 }
+
+
+
 
 AUTH_USER_MODEL = 'users.User'
 
